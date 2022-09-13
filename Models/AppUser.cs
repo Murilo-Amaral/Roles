@@ -4,6 +4,6 @@ namespace WebApplication1.Models
 {
     public class AppUser : IdentityUser
     {
-
+        public string NickName { get; set; }
     }
 }
