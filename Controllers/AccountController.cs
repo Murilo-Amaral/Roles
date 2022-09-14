@@ -19,6 +19,14 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Login(string returnUrl = null)
+        {
+            LoginViewModel loginViewModel = new LoginViewModel();
+            loginViewModel.ReturnUrl = returnUrl ?? Url.Content("~/");
+            return View(loginViewModel);
+        }
+
         public async Task<IActionResult> Register(string returnUrl = null)
         {
             RegisterViewModel registerViewModel = new RegisterViewModel();
